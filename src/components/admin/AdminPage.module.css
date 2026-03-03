@@ -1,0 +1,231 @@
+.page {
+  padding: 26px 30px 40px;
+  max-width: 1600px;
+  animation: slideUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  animation: slideUp 0.3s 0.04s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pageTitle {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.pageSubtitle {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+  animation: slideUp 0.32s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: box-shadow var(--transition-base);
+}
+
+.panel:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.panelHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+.panelBody {
+  padding: 18px 20px;
+}
+
+.primaryButton {
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  padding: 0 18px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(75, 179, 255, 0.3);
+}
+
+.primaryButton:hover {
+  background: var(--accent-strong);
+  box-shadow: 0 4px 10px rgba(24, 155, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.mutedButton {
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  padding: 0 18px;
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.mutedButton:hover {
+  background: var(--app-bg);
+  border-color: #c5ccd8;
+  transform: translateY(-1px);
+}
+
+.mutedButton:active {
+  transform: translateY(0);
+}
+
+.tableWrap {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 13px 18px;
+  color: rgba(255, 255, 255, 0.93);
+  background: #0c4f7e;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.table thead th:first-child {
+  border-radius: 0;
+}
+
+.table thead th:last-child {
+  border-radius: 0;
+}
+
+.table tbody tr {
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: rgba(75, 179, 255, 0.06);
+}
+
+.table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.016);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background: rgba(75, 179, 255, 0.04);
+}
+
+.table tbody td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1px;
+}
+
+.statusPillSuccess {
+  background: var(--success-dim);
+  color: #15803d;
+}
+
+.statusPillPending {
+  background: var(--warning-dim);
+  color: #92400e;
+}
+
+.statusPillDanger {
+  background: var(--danger-dim);
+  color: #b91c1c;
+}
+
+@media (max-width: 1200px) {
+  .page {
+    padding: 22px 22px 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 18px 16px 28px;
+  }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pageTitle {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 14px 12px 24px;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 11px 12px;
+  }
+}

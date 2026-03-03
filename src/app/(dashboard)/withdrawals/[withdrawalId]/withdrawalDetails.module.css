@@ -1,0 +1,396 @@
+/* Withdrawal Details — matches Bryt Admin design system */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 16, 26, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: backdropIn 0.2s ease both;
+}
+
+.card {
+  background: var(--panel-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: scaleIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Header ─────────────────────────────── */
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 12px;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.idBadge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 10px;
+  background: var(--accent-dim);
+  color: var(--accent-strong);
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+/* ── Hero: amount + status ───────────────── */
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--app-bg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.amountGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.amountLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.amountValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.amountMeta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Status badge with dot */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.statusBadge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.statusPaid {
+  background: var(--success-dim);
+  color: #15803d;
+}
+
+.statusPaid::before {
+  background: #22c55e;
+}
+
+.statusRejected {
+  background: var(--danger-dim);
+  color: #b91c1c;
+}
+
+.statusRejected::before {
+  background: var(--danger);
+}
+
+.statusPending {
+  background: var(--warning-dim);
+  color: #92400e;
+}
+
+.statusPending::before {
+  background: #f59e0b;
+}
+
+/* ── Body ────────────────────────────────── */
+
+.cardBody {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+/* Worker row */
+.workerRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--app-bg);
+}
+
+.workerAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.workerName {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.workerSub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Bank details card */
+.bankCard {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bankRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bankRow:last-child {
+  border-bottom: none;
+}
+
+.detailItem {
+  padding: 13px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailItem:first-child {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.detailItemFull {
+  grid-column: 1 / -1;
+  border-right: none !important;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.detailValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: 0.5px;
+}
+
+/* ── Footer ──────────────────────────────── */
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--app-bg);
+}
+
+/* Approve button */
+.approveBtn {
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  padding: 0 20px;
+  background: #22c55e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.approveBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+}
+
+.approveBtn:active {
+  transform: translateY(0);
+}
+
+/* Reject button */
+.rejectBtn {
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(230, 74, 74, 0.25);
+  padding: 0 20px;
+  background: var(--danger-dim);
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.rejectBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.rejectBtn:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 580px) {
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .amountValue {
+    font-size: 24px;
+  }
+
+  .bankRow {
+    grid-template-columns: 1fr;
+  }
+
+  .detailItem:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .card {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    max-height: 95vh;
+  }
+
+  .cardHeader,
+  .hero,
+  .cardBody,
+  .cardFooter {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cardFooter {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .approveBtn,
+  .rejectBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

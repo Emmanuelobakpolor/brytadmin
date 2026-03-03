@@ -1,0 +1,305 @@
+/* Support Ticket detail / chat page */
+
+/* ── Sub-header (back + status) ──────────────────── */
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--accent-strong);
+}
+
+.pendingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d97706;
+}
+
+.pendingBadge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+/* ── Ticket info card ────────────────────────────── */
+
+.ticketCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--app-bg);
+  border-radius: var(--radius-md);
+  margin: 20px 24px 0;
+}
+
+.ticketLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ticketTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e64a4a;
+}
+
+.ticketMeta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.ticketStatusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--warning-dim);
+  color: #92400e;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.ticketStatusPill::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+.ticketStatusLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.ticketRight {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+/* ── Chat area ───────────────────────────────────── */
+
+.chatArea {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 160px;
+}
+
+/* Admin message (right-aligned, blue) */
+.msgAdmin {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bubbleAdmin {
+  max-width: 60%;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 14px;
+}
+
+/* User message (left-aligned, gray) */
+.msgUser {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bubbleUser {
+  max-width: 60%;
+  background: var(--app-bg);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: 16px 16px 16px 4px;
+  padding: 10px 14px;
+}
+
+.bubbleText {
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.bubbleTime {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* ── Reply form ──────────────────────────────────── */
+
+.replyForm {
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.replyLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.replyTextarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--app-bg);
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.replyTextarea::placeholder {
+  color: var(--text-muted);
+}
+
+.replyTextarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  background: var(--panel-bg);
+}
+
+/* File upload area */
+.attachLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.attachBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1.5px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--app-bg);
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 13px;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.attachBox:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Action buttons */
+.replyActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.settledBtn {
+  height: 40px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.settledBtn:hover {
+  background: var(--app-bg);
+  border-color: #c5ccd8;
+}
+
+.sendBtn {
+  height: 40px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(75, 179, 255, 0.3);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.sendBtn:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .ticketCard {
+    flex-direction: column;
+    margin: 16px 16px 0;
+  }
+
+  .subHeader,
+  .chatArea,
+  .replyForm {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bubbleAdmin,
+  .bubbleUser {
+    max-width: 85%;
+  }
+
+  .replyActions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .settledBtn,
+  .sendBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

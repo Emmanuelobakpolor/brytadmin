@@ -1,0 +1,165 @@
+.topBar {
+  height: 68px;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: var(--shadow-sm);
+  animation: slideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: box-shadow var(--transition-base);
+}
+
+.mobileMenuButton {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.mobileMenuButton:hover {
+  background: var(--app-bg);
+  border-color: #c5ccd8;
+}
+
+.searchWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--app-bg);
+  max-width: 520px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, max-width 0.25s ease;
+}
+
+.searchWrap:focus-within {
+  border-color: rgba(75, 179, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(75, 179, 255, 0.11);
+  max-width: 560px;
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  border: 0;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.iconButton {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.iconButton:hover {
+  background: var(--app-bg);
+  border-color: rgba(24, 155, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(24, 155, 255, 0.09);
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.userChip:hover {
+  border-color: rgba(24, 155, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(24, 155, 255, 0.07);
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b8e0ff, #4bb3ff);
+  flex-shrink: 0;
+}
+
+.userMeta {
+  line-height: 1.2;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.userRole {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .topBar {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .mobileMenuButton {
+    display: inline-flex;
+  }
+
+  .searchWrap {
+    max-width: none;
+  }
+
+  .userMeta {
+    display: none;
+  }
+
+  .userChip {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar {
+    gap: 8px;
+  }
+}

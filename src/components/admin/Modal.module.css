@@ -1,0 +1,63 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  animation: backdropIn 0.2s ease both;
+}
+
+.modalBackdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(2px);
+}
+
+.modalCard {
+  position: relative;
+  width: min(520px, calc(100vw - 32px));
+  background: var(--panel-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 64px rgba(0, 0, 0, 0.26), 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalTitle {
+  font-weight: 700;
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.closeButton:hover {
+  background: var(--app-bg);
+  border-color: #c5ccd8;
+  transform: scale(1.08);
+}
+
+.modalBody {
+  padding: 16px;
+}

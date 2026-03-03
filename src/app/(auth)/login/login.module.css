@@ -1,0 +1,158 @@
+.loginPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.brandPanel {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 56px;
+  display: flex;
+  align-items: center;
+  animation: slideInLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brandPanelInner {
+  max-width: 460px;
+}
+
+.brandMark {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 28px;
+  color: #8ad1ff;
+  margin-bottom: 22px;
+  animation: slideUp 0.45s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brandTitle {
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  animation: slideUp 0.45s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brandDescription {
+  color: var(--sidebar-muted);
+  line-height: 1.6;
+  animation: slideUp 0.45s 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.formPanel {
+  background: var(--panel-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px;
+  animation: fadeIn 0.4s ease both;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 420px;
+  animation: slideUp 0.48s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.formHeader {
+  margin-bottom: 18px;
+}
+
+.formTitle {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.textInput {
+  height: 44px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0 12px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.textInput:focus {
+  border-color: rgba(24, 155, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(24, 155, 255, 0.12);
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.rememberRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.forgotLink {
+  font-size: 13px;
+  color: var(--accent-strong);
+}
+
+.loginButton {
+  margin-top: 14px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 2px 8px rgba(75, 179, 255, 0.3);
+}
+
+.loginButton:hover {
+  background: var(--accent-strong);
+  box-shadow: 0 4px 14px rgba(24, 155, 255, 0.38);
+  transform: translateY(-1px);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .loginPage {
+    grid-template-columns: 1fr;
+  }
+
+  .brandPanel {
+    padding: 40px 24px;
+  }
+
+  .formPanel {
+    padding: 40px 24px;
+  }
+}

@@ -1,0 +1,842 @@
+/* ── Top bar ─────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: background 0.15s;
+}
+
+.backLink:hover {
+  background: var(--border-subtle);
+}
+
+.breadcrumbText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Active badge */
+.activeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #d97706;
+}
+
+.activeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d97706;
+  animation: pulse 2s infinite;
+}
+
+/* Pending badge */
+.pendingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #9a6a00;
+}
+
+.pendingDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d97706;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ── Worker header section ───────────────────────────────── */
+.workerHeaderSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.workerInfoBlock {
+  flex: 1;
+}
+
+.workerName {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.375rem;
+}
+
+.workerMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.locationPin {
+  font-style: normal;
+}
+
+.metaDivider {
+  color: var(--border-subtle);
+}
+
+.workerIdInline {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.blockBtn {
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.blockBtn:hover {
+  background: #fef2f2;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.suspendBtn {
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.suspendBtn:hover {
+  background: var(--app-bg);
+}
+
+/* Referral card */
+.referralCard {
+  background: var(--sidebar-bg);
+  color: #f3f4f6;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.referralLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(243, 244, 246, 0.65);
+  text-transform: uppercase;
+}
+
+.referralClaimed {
+  font-size: 0.9375rem;
+  color: #f3f4f6;
+}
+
+.referralClaimed strong {
+  font-weight: 700;
+}
+
+.referralHistory {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+/* ── Details card ────────────────────────────────────────── */
+.detailsCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.fieldsGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.fieldValue {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.viewDocLink {
+  color: var(--accent-strong);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.viewDocLink:hover {
+  text-decoration: underline;
+}
+
+.verifiedStatus {
+  color: #168a3a;
+  font-weight: 600;
+}
+
+.photoPlaceholder {
+  width: 140px;
+  min-height: 120px;
+  border-radius: 10px;
+  background: var(--app-bg);
+  border: 1px dashed var(--border-subtle);
+  flex-shrink: 0;
+}
+
+/* ── Ongoing Work card ───────────────────────────────────── */
+.ongoingCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ongoingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.ongoingTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ongoingHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.currentLocation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.userDetailsLink {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.userDetailsLink:hover {
+  text-decoration: underline;
+}
+
+.ongoingFields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.ongoingField {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.ongoingFieldIcon {
+  font-size: 0.9rem;
+}
+
+.ongoingFieldLabel {
+  color: var(--text-muted);
+  font-weight: 500;
+  min-width: 140px;
+}
+
+.ongoingFieldValue {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copyBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.copyBtn:hover {
+  color: var(--accent-strong);
+}
+
+/* ── Transactions card ───────────────────────────────────── */
+.transactionsCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.transactionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.transactionsTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.transactionsControls {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.txSearch {
+  height: 34px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--app-bg);
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  width: 210px;
+  outline: none;
+}
+
+.txSearch:focus {
+  border-color: var(--accent);
+}
+
+.txSelect {
+  height: 34px;
+  padding: 0 0.625rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--panel-bg);
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  outline: none;
+}
+
+.txActionBtn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.txActionBtn:hover {
+  color: var(--text-primary);
+}
+
+/* ── Declined badge ──────────────────────────────────────── */
+.declinedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.declinedDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+/* ── Decline reason banner ───────────────────────────────── */
+.declineBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.declineBannerIcon {
+  font-size: 1.1rem;
+  color: var(--danger);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.declineBannerTitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--danger);
+  margin-bottom: 0.25rem;
+}
+
+.declineBannerText {
+  font-size: 0.8125rem;
+  color: #7f1d1d;
+  line-height: 1.5;
+}
+
+/* ── Pending sections ────────────────────────────────────── */
+.pendingSection {
+  margin-bottom: 1.25rem;
+}
+
+.pendingSectionTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.pendingCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.pendingFieldsGrid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+/* Worker photo */
+.workerPhoto {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.workerPhotoInner {
+  width: 110px;
+  height: 130px;
+  border-radius: 10px;
+  background: var(--app-bg);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Document preview */
+.docPreview {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.docPreviewInner {
+  width: 140px;
+  min-height: 130px;
+  border-radius: 10px;
+  background: var(--app-bg);
+  border: 2px dashed var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.docIcon {
+  font-size: 2rem;
+}
+
+.docLabel {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Pending layout ──────────────────────────────────────── */
+.pendingActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.declinePendingBtn {
+  height: 40px;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.declinePendingBtn:hover {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+.acceptPendingBtn {
+  height: 40px;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.acceptPendingBtn:hover {
+  background: var(--accent-strong);
+}
+
+/* ── Shared modal pieces ─────────────────────────────────── */
+.modalBody {
+  padding: 0.75rem 0.25rem 0.25rem;
+}
+
+.modalDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalBtns {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.cancelBtn {
+  height: 38px;
+  padding: 0 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cancelBtn:hover {
+  background: var(--app-bg);
+}
+
+.deleteBtn {
+  height: 38px;
+  padding: 0 1.25rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.deleteBtn:hover {
+  background: #c53030;
+}
+
+.acceptConfirmBtn {
+  height: 38px;
+  padding: 0 1.25rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.acceptConfirmBtn:hover {
+  background: var(--accent-strong);
+}
+
+/* Reason textarea modal */
+.reasonField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.reasonLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.reasonTextarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  background: var(--panel-bg);
+  resize: vertical;
+  outline: none;
+  line-height: 1.5;
+}
+
+.reasonTextarea:focus {
+  border-color: var(--accent);
+}
+
+.reasonTextarea::placeholder {
+  color: var(--border-subtle);
+}
+
+.deleteAccountBtn {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.deleteAccountBtn:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Success modal */
+.successBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.successIconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.successTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.successDesc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+.successBtn {
+  height: 40px;
+  padding: 0 2rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 0.5rem;
+}
+
+.successBtn:hover {
+  background: var(--accent-strong);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .workerHeaderSection {
+    flex-direction: column;
+  }
+
+  .referralCard {
+    width: 100%;
+  }
+
+  .detailsCard {
+    flex-direction: column;
+  }
+
+  .photoPlaceholder {
+    width: 100%;
+    min-height: 100px;
+  }
+
+  .fieldsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pendingCard {
+    flex-direction: column;
+  }
+
+  .workerPhoto,
+  .workerPhotoInner,
+  .docPreview,
+  .docPreviewInner {
+    width: 100%;
+  }
+
+  .workerPhotoInner {
+    height: 180px;
+  }
+
+  .ongoingHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transactionsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .txSearch {
+    width: 100%;
+  }
+
+  .pendingActions {
+    flex-direction: column;
+  }
+
+  .modalBtns {
+    flex-direction: column;
+  }
+
+  .cancelBtn,
+  .deleteBtn,
+  .acceptConfirmBtn {
+    width: 100%;
+  }
+}

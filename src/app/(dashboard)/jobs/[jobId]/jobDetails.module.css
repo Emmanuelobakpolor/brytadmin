@@ -1,0 +1,207 @@
+/* Job Details modal — matches Bryt Admin design system */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 16, 26, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: backdropIn 0.2s ease both;
+}
+
+.card {
+  background: var(--panel-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  animation: scaleIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Header ─────────────────────────────── */
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px 18px;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+/* ── Body ────────────────────────────────── */
+
+.cardBody {
+  padding: 0 24px 20px;
+}
+
+.sectionLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+/* Row-based detail list */
+.detailList {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 16px;
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.detailValue {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* Status pill inside detail row */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--warning-dim);
+  color: #92400e;
+}
+
+.statusPill::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+.statusPillCompleted {
+  background: var(--success-dim);
+  color: #15803d;
+}
+
+.statusPillCompleted::before {
+  background: #22c55e;
+}
+
+.statusPillInProgress {
+  background: var(--accent-dim);
+  color: var(--accent-strong);
+}
+
+.statusPillInProgress::before {
+  background: var(--accent);
+}
+
+.statusPillCanceled {
+  background: var(--danger-dim);
+  color: #b91c1c;
+}
+
+.statusPillCanceled::before {
+  background: var(--danger);
+}
+
+/* ── Footer ──────────────────────────────── */
+
+.cardFooter {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cancelBtn {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  background: var(--danger);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.cancelBtn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .card {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .cardHeader,
+  .cardBody,
+  .cardFooter {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

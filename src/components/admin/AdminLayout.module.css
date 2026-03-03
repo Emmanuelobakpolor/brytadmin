@@ -1,0 +1,71 @@
+.adminShell {
+  display: grid;
+  grid-template-columns: 272px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.22);
+  scrollbar-width: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.mainArea {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pageContent {
+  min-width: 0;
+  flex: 1;
+  animation: fadeIn 0.22s ease both;
+}
+
+.mobileBackdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .adminShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -290px;
+    top: 0;
+    width: 272px;
+    height: 100vh;
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
+  }
+
+  .sidebarOpen {
+    left: 0;
+    box-shadow: 6px 0 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .mobileBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.52);
+    border: 0;
+    z-index: 40;
+    backdrop-filter: blur(3px);
+    animation: backdropIn 0.22s ease both;
+  }
+}

@@ -1,0 +1,160 @@
+/* Referrals page styles - redesigned */
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.referrerCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.referrerAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.creditBtn,
+.expireBtn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creditBtn {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.creditBtn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.expireBtn {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+.expireBtn:hover {
+  background-color: var(--danger-hover);
+  transform: scale(1.05);
+}
+
+.noAction {
+  color: var(--gray-400);
+  font-size: 1rem;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.modalDesc {
+  color: var(--gray-500);
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.modalBtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--white);
+  color: var(--gray-900);
+  border: 1px solid var(--gray-200);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancelBtn:hover {
+  background-color: var(--gray-50);
+}
+
+.creditModalBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.creditModalBtn:hover {
+  background-color: var(--accent-hover);
+}
+
+.expireModalBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--danger);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.expireModalBtn:hover {
+  background-color: var(--danger-hover);
+}
+
+@media (max-width: 768px) {
+  .referrerCell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .referrerAvatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .creditBtn,
+  .expireBtn {
+    width: 36px;
+    height: 36px;
+  }
+}
