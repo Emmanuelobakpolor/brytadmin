@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Admin Portal",
   description: "Admin dashboard",
+  icons: {
+    icon: "/assets/Screenshot 2026-02-27 143026.png",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { Icon } from "./icons";
@@ -40,7 +41,14 @@ export default function TopBar({ onOpenMenu }: TopBarProps) {
         </Link>
 
         <div className={styles.userChip}>
-          <div className={styles.userAvatar} />
+          <Image
+              src="/assets/Screenshot 2026-02-27 143026.png"
+              alt="User avatar"
+              width={32}
+              height={32}
+              className={styles.userAvatar}
+              priority
+            />
           <div className={styles.userMeta}>
             <div className={styles.userName}>Eric Kayser</div>
             <div className={styles.userRole}>Admin</div>

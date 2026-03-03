@@ -116,7 +116,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #b8e0ff, #4bb3ff);
+  object-fit: cover;
   flex-shrink: 0;
 }
 
